@@ -1,9 +1,11 @@
+package com.tms;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter("/cars")
+@WebFilter
 public class CarFilter implements Filter {
 
     @Override
@@ -17,7 +19,7 @@ public class CarFilter implements Filter {
             chain.doFilter(request, response);
         }
         String language = ((HttpServletRequest) request).getHeader("Language");
-        if (language == null || language.equals(" ")) {
+        if (language == null || language.isEmpty()) {
             throw new ServletException("problems with header Language");
         } else {
             chain.doFilter(request, response);

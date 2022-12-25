@@ -1,3 +1,7 @@
+package com.tms;
+
+import com.tms.service.Cars;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -6,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -26,16 +29,17 @@ public class MyServlet extends HttpServlet {
         String id = req.getParameter("id");
         ServletOutputStream outputStream = resp.getOutputStream();
         List<CarConstr> car = carTest.allCars();
-        outputStream.println(Arrays.toString(car.toArray()));
+        outputStream.println(car.toString());
 //        Enumeration<String> parameterNames = req.getParameterNames();
 //        while (parameterNames.hasMoreElements()){
 //        outputStream.println(parameterNames.nextElement());
-        if (!(id == null || id.equals(" "))) {
+        if (id == null || id.isEmpty()) {
+            outputStream.println("no such element");
+        } else{
             CarConstr carConstr = carTest.getCarWithId(id);
             outputStream.println(carConstr.toString());
         }
 
-        outputStream.close();
         req.getRequestDispatcher("/empty.html").forward(req, resp);
     }
 

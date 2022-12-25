@@ -6,7 +6,7 @@
 
 <!--    <servlet>-->
 <!--        <servlet-name>car</servlet-name>-->
-<!--        <servlet-class>MyServlet</servlet-class>-->
+<!--        <servlet-class>com.tms.MyServlet</servlet-class>-->
 <!--    </servlet>-->
 
 <!--    <servlet-mapping>-->
@@ -16,7 +16,7 @@
 
 <!--    <filter>-->
 <!--        <filter-name>log</filter-name>-->
-<!--        <filter-class>CarFilter</filter-class>-->
+<!--        <filter-class>com.tms.CarFilter</filter-class>-->
 <!--    </filter>-->
 <!--    <filter-mapping>-->
 <!--        <filter-name>log</filter-name>-->
@@ -24,7 +24,7 @@
 <!--    </filter-mapping>-->
 
 <!--    <listener>-->
-<!--        <listener-class>CarListener</listener-class>-->
+<!--        <listener-class>com.tms.CarListener</listener-class>-->
 <!--    </listener>-->
 
 <!--</web-app>-->
