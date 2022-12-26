@@ -8,8 +8,12 @@ import javax.servlet.http.HttpSessionListener;
 public class CarListener implements HttpSessionListener {
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        String id = se.getSession().getId();
-        System.out.println("SESSION CREATED "+id);
+        if(se.getSession()==null){
+            System.out.println("NULL");
+        }else {
+            String id = se.getSession().getId();
+            System.out.println("SESSION CREATED " + id);
+        }
 
     }
 

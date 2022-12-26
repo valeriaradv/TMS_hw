@@ -1,7 +1,5 @@
 package com.tms;
-
 import com.tms.service.Cars;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
