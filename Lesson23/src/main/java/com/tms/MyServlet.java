@@ -1,5 +1,5 @@
 package com.tms;
-import com.tms.service.Cars;
+import com.tms.service.CarsService;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @WebServlet("/cars")
 public class MyServlet extends HttpServlet {
-    private Cars carTest = new Cars();
+    private CarsService carTest = new CarsService();
 
     @Override
     public void init(ServletConfig config) {
